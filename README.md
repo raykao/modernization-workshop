@@ -1,11 +1,9 @@
 # DevDay Workshop: Modernize Legacy Java Applications with GitHub Copilot for Modernization
 
-This hands-on workshop is designed to introduce EDU audiences to a practical, AI-assisted approach for modernizing a Java 8 application. Using the **Asset Manager** sample application and **GitHub Copilot for modernization**, attendees will explore how state-of-the-art developer tools can further accelerate common modernization tasks without requiring deep prior experience in cloud migration and modernization.
+This hands-on workshop is designed to introduce EDU audiences to a practical, AI-assisted approach for modernizing a Java 8 application. Using the **Asset Manager** sample app and [GitHub Copilot for modernization](https://marketplace.visualstudio.com/items?itemName=vscjava.migrate-java-to-azure), attendees will explore how state-of-the-art developer tools can further accelerate common modernization tasks without requiring deep prior experience in cloud migration and modernization.
+
 
 ## Objectives
-
-This workshop walks attendees through the process of replatforming and refactoring a mostly on-premises Java application into a cloud-native solution, while gaining experience with AI-assisted application assessment, modernization planning, containerization, and cloud deployment workflows.
-
 By the end of this workshop, attendees will be able to:
 
 - Run an AI-assisted assessment on a legacy Java application
@@ -20,7 +18,7 @@ By the end of this workshop, attendees will be able to:
 - One of the following IDEs:
   - The latest version of [Visual Studio Code](https://code.visualstudio.com/). Must be version 1.101 or later.
     - [GitHub Copilot in Visual Studio Code](https://code.visualstudio.com/docs/copilot/overview). For setup instructions, see [Set up GitHub Copilot in Visual Studio Code](https://code.visualstudio.com/docs/copilot/setup). Be sure to sign in to your GitHub account within Visual Studio Code.
-    - [GitHub Copilot app modernization](https://marketplace.visualstudio.com/items?itemName=vscjava.migrate-java-to-azure). Restart Visual Studio Code after installation.
+    - [GitHub Copilot for modernization](https://marketplace.visualstudio.com/items?itemName=vscjava.migrate-java-to-azure). Restart Visual Studio Code after installation.
   - The latest version of [IntelliJ IDEA](https://www.jetbrains.com/idea/download). Must be version 2023.3 or later.
     - [GitHub Copilot](https://plugins.jetbrains.com/plugin/17718-github-copilot). Must be version 1.5.59 or later. For more instructions, see [Set up GitHub Copilot in IntelliJ IDEA](https://docs.github.com/en/copilot/get-started/quickstart). Be sure to sign in to your GitHub account within IntelliJ IDEA.
     - [GitHub Copilot for Modernization Extension](https://plugins.jetbrains.com/plugin/28791-github-copilot-app-modernization). Restart IntelliJ IDEA after installation. If you don't have GitHub Copilot installed, you can install GitHub Copilot app modernization directly.
@@ -45,7 +43,11 @@ The [Asset Manager](https://github.com/Azure-Samples/java-migration-copilot-samp
 
 Current architecture:
 
-![Current Architecture](img\current-architecture.png)
+![Current Architecture](img/current-architecture.png)
+
+
+Target state:
+![Target Architecture](img\target-architecture.png)
 
 
 ## Running locally

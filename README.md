@@ -10,21 +10,10 @@ By the end of this workshop, attendees will be able to:
 
 - Run an AI-assisted assessment on a legacy Java application
 - Identify modernization issues and recommended next steps
-- Generate containerization artifacts for an existing monolithic app
+- Generate containerization artifacts for an existing monolithic application
 - Use AI to help create infrastructure specs to prepare for deployment to cloud
-- Understand how AI can reduce the barrier to entry for modernization
+- Use GitHub Copilot for debugging and understand how AI can reduce the barrier to entry for modernization
 
-## Sample Application
-The [Asset Manager](https://github.com/Azure-Samples/java-migration-copilot-samples/tree/main/asset-manager) app is consisted of 2 modules, `Web` and `Worker` with functions for the following components:
-* PostgreSQL database for metadata storage, using password-based authentication
-* RabbitMQ for queuing messages, using password-based authentication
-* AWS S3 for image storage, using password-based authentication (access key/secret key)
-
-
-
-Current architecture:
-
-![Current Architecture](img\current-architecture.png)
 
 ## Prerequisites
 - A GitHub account with [GitHub Copilot](https://github.com/features/copilot) enabled.
@@ -38,7 +27,7 @@ Current architecture:
     - For more efficient use of Copilot in app modernization: in the IntelliJ IDEA settings, select the **Tools** > **GitHub Copilot** configuration window, and then select **Auto-approve** and **Trust MCP Tool Annotations**. For more information, see [Configure settings for GitHub Copilot app modernization to optimize the experience for IntelliJ](configure-settings-intellij.md).
 - [Java JDK](/java/openjdk/download) for source and target JDK versions, i.e. [JDK 8](https://learn.microsoft.com/en-us/java/openjdk/download#openjdk-8) and Java 21.
 - [Maven 3.6.0+](https://maven.apache.org/install.html) or [Gradle](https://gradle.org/install/) to build Java projects.
-- [Docker](https://docs.docker.com/desktop/) (for PostgreSQL and RabbitMQ containers)
+- [Docker Desktop](https://docs.docker.com/desktop/) (for PostgreSQL and RabbitMQ containers)
 - In the Visual Studio Code settings, make sure `chat.extensionTools.enabled` is set to `true`. This setting might be controlled by your organization if using GitHub Copilot Business or GitHub Copilot Enterprise.
 
 Optional:
@@ -46,12 +35,44 @@ Optional:
 - [Angular CLI](https://angular.dev/tools/cli): `npm install -g @angular/cli`
 
 
-## Clean up
+## Sample application
+The [Asset Manager](https://github.com/Azure-Samples/java-migration-copilot-samples/tree/main/asset-manager) app is consisted of 2 modules, `Web` and `Worker` with functions for the following components:
+* PostgreSQL database for metadata storage, using password-based authentication
+* RabbitMQ for queuing messages, using password-based authentication
+* AWS S3 for image storage, using password-based authentication (access key/secret key)
 
-When no longer needed, you can delete all related resources using the following scripts.
+
+
+Current architecture:
+
+![Current Architecture](img\current-architecture.png)
+
+
+## Running locally
+To run the asset-manager app locally:
 
 Windows:
-```batch
+```
+scripts\startapp.cmd
+```
+
+Linux/Unix:
+```
+scripts/startapp.sh
+```
+
+This will launch PostgreSQL and RabbitMQ via Docker and starts both the web and worker modules with the `dev` profile (local file storage instead of S3). Open http://localhost:8080 to verify the Thymeleaf UI loads.
+
+
+![Current UI](img/thymeleaf-ui.png)
+
+
+## Clean up
+
+When no longer needed, you can delete all related Azure resources using the following scripts.
+
+Windows:
+```bash
 scripts\cleanup-azure-resources.cmd -ResourceGroupName <your resource group name>
 ```
 

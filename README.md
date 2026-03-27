@@ -26,21 +26,21 @@ Optional:
 
 ## Getting started
 
-Clone or fork this repository or click on `Fork` to fork this repo from GitHub.
+- Clone or fork this repository or click on `Fork` to fork this repo from GitHub.
 
 ```text
 git clone https://github.com/cindyw4/modernization-workshop.git
 ```
 
 
-Start your IDE and navigate to the project folder to access source code.
+- Start your IDE and navigate to the project folder to access source code.
 
 
-Navigate to the `workshop` folder in the [main](https://github.com/cindyw4/modernization-workshop/tree/main/workshop) branch
+- Navigate to the `workshop` folder in the [main](https://github.com/cindyw4/modernization-workshop/tree/main/workshop) branch
 
 
 
-Run the sample `asset-manager` application locally:
+- Run the sample `asset-manager` application locally:
 
 Windows:
 ```
@@ -51,6 +51,7 @@ Linux/Unix:
 ```
 scripts/startapp.sh
 ```
+
 
 This will launch PostgreSQL and RabbitMQ via Docker and starts both the web and worker modules with the `dev` profile (local file storage instead of S3). Open http://localhost:8080 to verify the Thymeleaf UI loads.
 

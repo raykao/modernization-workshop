@@ -1,0 +1,10 @@
+.drop-zone {
+  cursor: pointer;
+  background-color: #f8f9fa;
+  transition: background-color 0.2s;
+
+  &.drag-over {
+    background-color: #e2f0fb;
+    border-color: #007bff !important;
+  }
+}

@@ -1,0 +1,28 @@
+<div class="container mt-4" *ngIf="image; else loading">
+  <a routerLink="/images" class="btn btn-outline-secondary mb-3">&larr; Back to list</a>
+  <div class="row">
+    <div class="col-md-8">
+      <img [src]="image.url" [alt]="image.key" class="img-fluid rounded shadow" />
+    </div>
+    <div class="col-md-4">
+      <h4>{{ image.key }}</h4>
+      <dl class="row small">
+        <dt class="col-sm-5">Content-Type</dt>
+        <dd class="col-sm-7">{{ image.contentType }}</dd>
+        <dt class="col-sm-5">Size</dt>
+        <dd class="col-sm-7">{{ (image.size / 1024).toFixed(1) }} KB</dd>
+        <dt class="col-sm-5">Uploaded</dt>
+        <dd class="col-sm-7">{{ image.uploadedAt | date:'medium' }}</dd>
+        <dt class="col-sm-5">Modified</dt>
+        <dd class="col-sm-7">{{ image.lastModified | date:'medium' }}</dd>
+      </dl>
+      <a [href]="image.url" download class="btn btn-primary w-100">Download</a>
+    </div>
+  </div>
+</div>
+<ng-template #loading>
+  <div class="container mt-4">
+    <p *ngIf="notFound" class="text-danger">Image not found.</p>
+    <p *ngIf="!notFound">Loading…</p>
+  </div>
+</ng-template>
